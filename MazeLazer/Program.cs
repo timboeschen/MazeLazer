@@ -11,19 +11,16 @@ namespace MazeLaser
 {
     class Program
     {
-        const string RECORD_DELIMITER = "-1";
-
         static void Main(string[] args)
         {
             try
             {
-
                 Console.WriteLine("Please type in or paste the path to your maze definition file.");
                 var defenitionFile = Console.ReadLine();
 
                 //Check Code into 
                 var maze = GetMaze(defenitionFile);
-                var laser = new Laser(maze.EntryRoom, GetDirection(maze));
+                var laser = new Laser(maze.EntryRoom, maze.GetDirection());
 
                 Console.WriteLine($"Maze is {maze.Rooms.Max(r => r.X) + 1} rooms by {maze.Rooms.Max(r => r.Y) + 1} rooms");
                 Console.WriteLine($"Laser enters the maze traveling with a {laser.Orientation} orientation into Room({maze.EntryRoom.X},{maze.EntryRoom.Y}).");
@@ -40,12 +37,16 @@ namespace MazeLaser
 
         static Maze GetMaze(string fileName)
         {
+            const string RECORD_DELIMITER = "-1";
+
             using (var fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
             using (var sr = new StreamReader(fs, Encoding.Default))
             {
                 var dimensions = GetDimensions(sr.ReadLine());
                 var maze = new Maze(dimensions.First(), dimensions.Last());
-                VerifyDelimiter(sr.ReadLine());
+
+                if (sr.ReadLine() != RECORD_DELIMITER)
+                    throw new Exception("Invalid Definition File Format!!");
 
                 string line = sr.ReadLine();
                 while (line != RECORD_DELIMITER)
@@ -65,12 +66,12 @@ namespace MazeLaser
 
                 line = sr.ReadLine();
                 var entryRoomRegex = new Regex("(?:V|H)");
-                var erMatch = entryRoomRegex.Match(line);
-                var erDetails = entryRoomRegex.Match(line).Value;
-                var erDimensions = GetDimensions(line.Substring(0, erMatch.Index));
+                var entryRoomMatch = entryRoomRegex.Match(line);
+                var entryRoomDetails = entryRoomRegex.Match(line).Value;
+                var entryRoomDimensions = GetDimensions(line.Substring(0, entryRoomMatch.Index));
 
-                maze.EntryRoom = new Room(erDimensions.First(), erDimensions.Last());
-                maze.LazerOrientation = erDetails == "V" ? LaserOrientation.Vertical : LaserOrientation.Horizontal;
+                maze.EntryRoom = new Room(entryRoomDimensions.First(), entryRoomDimensions.Last());
+                maze.LazerOrientation = entryRoomDetails == "V" ? LaserOrientation.Vertical : LaserOrientation.Horizontal;
 
                 return maze;
             }
@@ -84,33 +85,27 @@ namespace MazeLaser
             return dimensions;
         }
 
-        static void VerifyDelimiter(string line)
-        {
-            if (line != RECORD_DELIMITER)
-                throw new Exception("Invalid Definition File Format!!");
-        }
-
-        static Direction GetDirection(Maze maze)
-        {
-            if (maze.LazerOrientation == LaserOrientation.Vertical)
-            {
-                if (maze.EntryRoom.Y == 0)
-                    return Direction.Up;
-                else if (maze.EntryRoom.Y == maze.Rooms.Max(r => r.Y))
-                    return Direction.Down;
-                else
-                    throw new Exception("Invalid Entry Room.");
-            }
-            else
-            {
-                if (maze.EntryRoom.X == 0)
-                    return Direction.Right;
-                else if (maze.EntryRoom.X == maze.Rooms.Max(r => r.X))
-                    return Direction.Left;
-                else
-                    throw new Exception("Invalid Entry Room.");
-            }
-        }
+        //static Direction GetDirection(Maze maze)
+        //{
+        //    if (maze.LazerOrientation == LaserOrientation.Vertical)
+        //    {
+        //        if (maze.EntryRoom.Y == 0)
+        //            return Direction.Up;
+        //        else if (maze.EntryRoom.Y == maze.Rooms.Max(r => r.Y))
+        //            return Direction.Down;
+        //        else
+        //            throw new Exception("Invalid Entry Room.");
+        //    }
+        //    else
+        //    {
+        //        if (maze.EntryRoom.X == 0)
+        //            return Direction.Right;
+        //        else if (maze.EntryRoom.X == maze.Rooms.Max(r => r.X))
+        //            return Direction.Left;
+        //        else
+        //            throw new Exception("Invalid Entry Room.");
+        //    }
+        //}
 
         static Room ProcessMaze(Maze map, Laser laser)
         {

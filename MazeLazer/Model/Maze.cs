@@ -41,6 +41,27 @@ namespace MazeLaser.Model
             }
         }
 
+        public Direction GetDirection()
+        {
+            if (LazerOrientation == LaserOrientation.Vertical)
+            {
+                if (EntryRoom.Y == 0)
+                    return Direction.Up;
+                else if (EntryRoom.Y == Rooms.Max(r => r.Y))
+                    return Direction.Down;
+                else
+                    throw new Exception("Invalid Entry Room.");
+            }
+            else
+            {
+                if (EntryRoom.X == 0)
+                    return Direction.Right;
+                else if (EntryRoom.X == Rooms.Max(r => r.X))
+                    return Direction.Left;
+                else
+                    throw new Exception("Invalid Entry Room.");
+            }
+        }
 
     }
 }

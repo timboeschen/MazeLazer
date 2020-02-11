@@ -17,6 +17,7 @@ namespace MazeLaser
         {
             try
             {
+
                 Console.WriteLine("Please type in or paste the path to your maze definition file.");
                 var defenitionFile = Console.ReadLine();
 

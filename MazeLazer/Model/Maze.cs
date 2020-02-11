@@ -74,6 +74,9 @@ namespace MazeLaser.Model
                 lastRoom = laser.Room;
                 if (laser.Room.Mirror != null)
                 {
+                    if (laser.Room.Mirror.HitCount++ > 2)
+                        throw new Exception("The laser is in an infinite loop.  Program has aborted.");
+
                     if (laser.Room.Mirror.Lean == Lean.Right)
                     {
                         switch (laser.Direction)

@@ -63,5 +63,124 @@ namespace MazeLaser.Model
             }
         }
 
+        public Room ShootLaser(Laser laser)
+        {
+            var lastRoom = new Room();
+            int x = laser.Room.X;
+            int y = laser.Room.Y;
+
+            while (laser.Room != null)
+            {
+                lastRoom = laser.Room;
+                if (laser.Room.Mirror != null)
+                {
+                    if (laser.Room.Mirror.Lean == Lean.Right)
+                    {
+                        switch (laser.Direction)
+                        {
+                            case Direction.Up:
+                                switch (laser.Room.Mirror.ReflectiveSide)
+                                {
+                                    case ReflectiveSide.Right:
+                                    case ReflectiveSide.Both:
+                                        laser.Direction = Direction.Right;
+                                        break;
+                                }
+                                break;
+                            case Direction.Down:
+                                switch (laser.Room.Mirror.ReflectiveSide)
+                                {
+                                    case ReflectiveSide.Left:
+                                    case ReflectiveSide.Both:
+                                        laser.Direction = Direction.Left;
+                                        break;
+                                }
+                                break;
+                            case Direction.Left:
+                                switch (laser.Room.Mirror.ReflectiveSide)
+                                {
+                                    case ReflectiveSide.Right:
+                                    case ReflectiveSide.Both:
+                                        laser.Direction = Direction.Down;
+                                        break;
+                                }
+                                break;
+                            case Direction.Right:
+                                switch (laser.Room.Mirror.ReflectiveSide)
+                                {
+                                    case ReflectiveSide.Left:
+                                    case ReflectiveSide.Both:
+                                        laser.Direction = Direction.Up;
+                                        break;
+                                }
+                                break;
+                        }
+                    }
+                    else if (laser.Room.Mirror.Lean == Lean.Left)
+                    {
+                        switch (laser.Direction)
+                        {
+                            case Direction.Up:
+                                switch (laser.Room.Mirror.ReflectiveSide)
+                                {
+                                    case ReflectiveSide.Left:
+                                    case ReflectiveSide.Both:
+                                        laser.Direction = Direction.Left;
+                                        break;
+                                }
+                                break;
+                            case Direction.Down:
+                                switch (laser.Room.Mirror.ReflectiveSide)
+                                {
+                                    case ReflectiveSide.Right:
+                                    case ReflectiveSide.Both:
+                                        laser.Direction = Direction.Right;
+                                        break;
+                                }
+                                break;
+                            case Direction.Left:
+                                switch (laser.Room.Mirror.ReflectiveSide)
+                                {
+                                    case ReflectiveSide.Left:
+                                    case ReflectiveSide.Both:
+                                        laser.Direction = Direction.Up;
+                                        break;
+                                }
+                                break;
+                            case Direction.Right:
+                                switch (laser.Room.Mirror.ReflectiveSide)
+                                {
+                                    case ReflectiveSide.Right:
+                                    case ReflectiveSide.Both:
+                                        laser.Direction = Direction.Down;
+                                        break;
+                                }
+                                break;
+                        }
+                    }
+                }
+
+                switch (laser.Direction)
+                {
+                    case Direction.Up:
+                        y++;
+                        break;
+                    case Direction.Down:
+                        y--;
+                        break;
+                    case Direction.Left:
+                        x--;
+                        break;
+                    case Direction.Right:
+                        x++;
+                        break;
+                }
+
+                laser.Room = Rooms.SingleOrDefault(r => r.X == x && r.Y == y);
+            }
+
+            return lastRoom;
+        }
+
     }
 }

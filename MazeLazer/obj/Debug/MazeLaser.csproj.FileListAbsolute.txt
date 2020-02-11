@@ -1,0 +1,20 @@
+C:\Users\boeschti\OneDrive - AgCompany\OneDriveDocs\Visual Studio\Projects\MazeLazer\MazeLazer\obj\Debug\MazeLaser.csproj.CoreCompileInputs.cache
+C:\Users\boeschti\OneDrive - AgCompany\OneDriveDocs\Visual Studio\Projects\MazeLazer\MazeLazer\bin\Debug\MazeLaser.exe.config
+C:\Users\boeschti\OneDrive - AgCompany\OneDriveDocs\Visual Studio\Projects\MazeLazer\MazeLazer\bin\Debug\MazeLaser.exe
+C:\Users\boeschti\OneDrive - AgCompany\OneDriveDocs\Visual Studio\Projects\MazeLazer\MazeLazer\bin\Debug\MazeLaser.pdb
+C:\Users\boeschti\OneDrive - AgCompany\OneDriveDocs\Visual Studio\Projects\MazeLazer\MazeLazer\obj\Debug\MazeLaser.exe
+C:\Users\boeschti\OneDrive - AgCompany\OneDriveDocs\Visual Studio\Projects\MazeLazer\MazeLazer\obj\Debug\MazeLaser.pdb
+C:\Users\boeschti\OneDrive - AgCompany\OneDriveDocs\Visual Studio\Projects\MazeLazer\MazeLazer\bin\Debug\System.IO.FileSystem.dll
+C:\Users\boeschti\OneDrive - AgCompany\OneDriveDocs\Visual Studio\Projects\MazeLazer\MazeLazer\bin\Debug\System.IO.FileSystem.Primitives.dll
+C:\Users\boeschti\OneDrive - AgCompany\OneDriveDocs\Visual Studio\Projects\MazeLazer\MazeLazer\obj\Debug\MazeLaser.csprojAssemblyReference.cache
+C:\Users\boeschti\OneDrive - AgCompany\OneDriveDocs\Visual Studio\Projects\MazeLazer\MazeLazer\obj\Debug\MazeLaser.csproj.CopyComplete
+C:\Users\boeschti\source\repos\MazeLazer\MazeLazer\bin\Debug\MazeLaser.exe.config
+C:\Users\boeschti\source\repos\MazeLazer\MazeLazer\bin\Debug\MazeLaser.exe
+C:\Users\boeschti\source\repos\MazeLazer\MazeLazer\bin\Debug\MazeLaser.pdb
+C:\Users\boeschti\source\repos\MazeLazer\MazeLazer\bin\Debug\System.IO.FileSystem.dll
+C:\Users\boeschti\source\repos\MazeLazer\MazeLazer\bin\Debug\System.IO.FileSystem.Primitives.dll
+C:\Users\boeschti\source\repos\MazeLazer\MazeLazer\obj\Debug\MazeLaser.csprojAssemblyReference.cache
+C:\Users\boeschti\source\repos\MazeLazer\MazeLazer\obj\Debug\MazeLaser.csproj.CoreCompileInputs.cache
+C:\Users\boeschti\source\repos\MazeLazer\MazeLazer\obj\Debug\MazeLaser.csproj.CopyComplete
+C:\Users\boeschti\source\repos\MazeLazer\MazeLazer\obj\Debug\MazeLaser.exe
+C:\Users\boeschti\source\repos\MazeLazer\MazeLazer\obj\Debug\MazeLaser.pdb

@@ -1,0 +1,14 @@
+C:\Users\tboeschen\source\repos\MazeLazer\MazeLazer\bin\Debug\MazeLazer.exe.config
+C:\Users\tboeschen\source\repos\MazeLazer\MazeLazer\bin\Debug\MazeLazer.exe
+C:\Users\tboeschen\source\repos\MazeLazer\MazeLazer\bin\Debug\MazeLazer.pdb
+C:\Users\tboeschen\source\repos\MazeLazer\MazeLazer\obj\Debug\MazeLazer.csprojResolveAssemblyReference.cache
+C:\Users\tboeschen\source\repos\MazeLazer\MazeLazer\obj\Debug\MazeLazer.csproj.CoreCompileInputs.cache
+C:\Users\tboeschen\source\repos\MazeLazer\MazeLazer\obj\Debug\MazeLazer.exe
+C:\Users\tboeschen\source\repos\MazeLazer\MazeLazer\obj\Debug\MazeLazer.pdb
+C:\Users\boeschti\OneDrive - AgCompany\OneDriveDocs\Visual Studio\Projects\MazeLazer\MazeLazer\obj\Debug\MazeLazer.csprojAssemblyReference.cache
+C:\Users\boeschti\OneDrive - AgCompany\OneDriveDocs\Visual Studio\Projects\MazeLazer\MazeLazer\obj\Debug\MazeLazer.csproj.CoreCompileInputs.cache
+C:\Users\boeschti\OneDrive - AgCompany\OneDriveDocs\Visual Studio\Projects\MazeLazer\MazeLazer\obj\Debug\MazeLazer.exe
+C:\Users\boeschti\OneDrive - AgCompany\OneDriveDocs\Visual Studio\Projects\MazeLazer\MazeLazer\obj\Debug\MazeLazer.pdb
+C:\Users\boeschti\OneDrive - AgCompany\OneDriveDocs\Visual Studio\Projects\MazeLazer\MazeLazer\bin\Debug\MazeLazer.exe.config
+C:\Users\boeschti\OneDrive - AgCompany\OneDriveDocs\Visual Studio\Projects\MazeLazer\MazeLazer\bin\Debug\MazeLazer.exe
+C:\Users\boeschti\OneDrive - AgCompany\OneDriveDocs\Visual Studio\Projects\MazeLazer\MazeLazer\bin\Debug\MazeLazer.pdb

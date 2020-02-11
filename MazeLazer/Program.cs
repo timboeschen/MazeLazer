@@ -11,15 +11,14 @@ namespace MazeLaser
 {
     class Program
     {
-        const string DELIMITER = "-1";
+        const string RECORD_DELIMITER = "-1";
 
         static void Main(string[] args)
         {
-
             try
             {
                 Console.WriteLine("Please type in or paste the path to your maze definition file.");
-                var defenitionFile = @"C:\Compare\def.txt";// Console.ReadLine();
+                var defenitionFile = Console.ReadLine();
 
                 //Check Code into 
                 var maze = GetMaze(defenitionFile);
@@ -48,7 +47,7 @@ namespace MazeLaser
                 VerifyDelimiter(sr.ReadLine());
 
                 string line = sr.ReadLine();
-                while (line != DELIMITER)
+                while (line != RECORD_DELIMITER)
                 {
                     var mirrorRegex = new Regex("(?:RR|RL|LR|LL|R|L)");
                     var mirrorMatch = mirrorRegex.Match(line);
@@ -86,7 +85,7 @@ namespace MazeLaser
 
         static void VerifyDelimiter(string line)
         {
-            if (line != DELIMITER)
+            if (line != RECORD_DELIMITER)
                 throw new Exception("Invalid Definition File Format!!");
         }
 

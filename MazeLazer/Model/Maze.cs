@@ -141,7 +141,7 @@ namespace MazeLaser.Model
                             case Direction.Left:
                                 switch (laser.Room.Mirror.ReflectiveSide)
                                 {
-                                    case ReflectiveSide.Left:
+                                    case ReflectiveSide.Right:
                                     case ReflectiveSide.Both:
                                         laser.Direction = Direction.Up;
                                         break;
@@ -150,7 +150,7 @@ namespace MazeLaser.Model
                             case Direction.Right:
                                 switch (laser.Room.Mirror.ReflectiveSide)
                                 {
-                                    case ReflectiveSide.Right:
+                                    case ReflectiveSide.Left:
                                     case ReflectiveSide.Both:
                                         laser.Direction = Direction.Down;
                                         break;

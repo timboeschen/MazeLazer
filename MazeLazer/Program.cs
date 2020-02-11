@@ -18,7 +18,6 @@ namespace MazeLaser
                 Console.WriteLine("Please type in or paste the path to your maze definition file.");
                 var defenitionFile = Console.ReadLine();
 
-                //Check Code into 
                 var maze = GetMaze(defenitionFile);
                 var laser = new Laser(maze.EntryRoom, maze.GetDirection());
 
@@ -32,7 +31,12 @@ namespace MazeLaser
             {
                 Console.WriteLine(ex.ToString());
             }
-            finally { Console.ReadKey(); }
+            finally
+            {
+                Console.WriteLine();
+                Console.WriteLine("Hit any key to exit the application.");
+                Console.ReadKey();
+            }
         }
 
         static Maze GetMaze(string fileName)

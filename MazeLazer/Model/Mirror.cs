@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
-namespace MazeLaser.Model
+﻿namespace MazeLaser.Model
 {
     public enum Lean { Right, Left }
     public enum ReflectiveSide { Right, Left, Both }
